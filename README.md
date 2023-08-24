@@ -116,7 +116,7 @@ JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.19.0.7-1.el7_9.x86_64
 
 9. 	Now to integrate Maven to Jenkins go to Global tool configuration and fill the following details for JDK and Maven
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/6de599df-2d27-40ef-8939-45c6bd83bdec" alt="image" width="350" height="350" /> 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/f8dc9c59-eaaf-4ddc-be31-805e484023a5" alt="image" width="350" height="350" /> 
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/6de599df-2d27-40ef-8939-45c6bd83bdec" alt="image" width="450" height="350" /> 
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/f8dc9c59-eaaf-4ddc-be31-805e484023a5" alt="image" width="450" height="350" /> 
  	
 
