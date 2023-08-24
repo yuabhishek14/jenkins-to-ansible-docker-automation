@@ -23,8 +23,8 @@ Before setting up the project, ensure you meet the following prerequisites:
 
    | Virtual Machine  | Hostname       | Purpose                                    | Private IP       |
    |------------------|----------------|--------------------------------------------|-----------------|
-   | VM1              | jenkinsMachine | Jenkins server for CI/CD pipeline         | 192.168.1.2     |
-   | VM2              | tomcat   | Jenkins agent for building and executing jobs | 192.168.1.3               |
+   | VM1              | jenkins        | Jenkins server for CI/CD pipeline         | 192.168.1.2     |
+   | VM2              | tomcat         | Jenkins agent for building and executing jobs | 192.168.1.3               |
    | VM3              | docker         | SonarQube server for code quality analysis | 192.168.1.4     |
    | VM4              | ansible        | Argo CD server for Kubernetes continuous delivery | 192.168.1.5              |
 
@@ -32,3 +32,4 @@ Before setting up the project, ensure you meet the following prerequisites:
 
 Target : Automate the Jenkins pipeline to fetch code from GitHub and build it using Maven.
 #### Install Jenkins on CentOS
+Login to your VM1 
