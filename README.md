@@ -124,7 +124,7 @@ JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.19.0.7-1.el7_9.x86_64
 1.	Create a new job using maven project option 
 2.	Fill the Git repo details
    
-   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/35a1b89c-fcb1-4fd8-9232-728ec8ec0af2" alt="image" width="800" height="200" />
+   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/35a1b89c-fcb1-4fd8-9232-728ec8ec0af2" alt="image" width="800" height="300" />
   	
 3.	Fill the Maven details
    
@@ -132,3 +132,6 @@ JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.19.0.7-1.el7_9.x86_64
    
 Note : install means  : install the package into the local repository, for use as a dependency in other projects locally.
 4.	Save and apply then build the pipeline .
+
+## 2. Tomcat Integration with CI/CD
+
