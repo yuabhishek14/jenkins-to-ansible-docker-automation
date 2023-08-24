@@ -96,5 +96,21 @@ Note : Path to Git executable means where is my Git installed. Either we can giv
 4.	Rename the file to make it simple – mv apache-maven-3.8.3 maven
 5.	If you go inside the maven bin folder you will see the actual command of Mavne i.e mvn
 	
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ed16098b-2aee-447b-9db0-420219c923b2" alt="image" width="800" height="200" /> 
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ed16098b-2aee-447b-9db0-420219c923b2" alt="image" width="800" height="250" /> 
+
+6.	Now we need to set it up in the environment variable as right now it works only inside the maven bin folder but not outside.
+
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ade4cd45-bc3a-4be6-860e-f8c0e26b5c7d" alt="image" width="800" height="250" /> 
+
+ ```bash
+	vi ~/.bash_profile
+M2_HOME=/opt/maven   (Note : where our apache maven is available)
+M2=/opt/maven/bin (Note: binary directory)
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.19.0.7-1.el7_9.x86_64
+(Note: where our jdk is available. To find it use – find / -name java-11*)
+```
+7.	For the values to change either we need to log out and login or we can use – source .bash_profile
+8.	Install Maven plugin in Jenkins UI
+
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/08e76475-477c-4ec0-8ce4-4c3916fed973" alt="image" width="750" height="90" /> 
 
