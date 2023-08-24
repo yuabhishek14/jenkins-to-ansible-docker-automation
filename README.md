@@ -96,5 +96,5 @@ Note : Path to Git executable means where is my Git installed. Either we can giv
 4.	Rename the file to make it simple – mv apache-maven-3.8.3 maven
 5.	If you go inside the maven bin folder you will see the actual command of Mavne i.e mvn
 	
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ed16098b-2aee-447b-9db0-420219c923b2" alt="image" width="700" height="250" /> 
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ed16098b-2aee-447b-9db0-420219c923b2" alt="image" width="800" height="200" /> 
 
