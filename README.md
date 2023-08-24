@@ -103,7 +103,7 @@ Note : Path to Git executable means where is my Git installed. Either we can giv
 <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ade4cd45-bc3a-4be6-860e-f8c0e26b5c7d" alt="image" width="800" height="250" /> 
 
  ```bash
-	vi ~/.bash_profile
+vi ~/.bash_profile
 M2_HOME=/opt/maven   (Note : where our apache maven is available)
 M2=/opt/maven/bin (Note: binary directory)
 JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.19.0.7-1.el7_9.x86_64
@@ -113,4 +113,10 @@ JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.19.0.7-1.el7_9.x86_64
 8.	Install Maven plugin in Jenkins UI
 
 <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/08e76475-477c-4ec0-8ce4-4c3916fed973" alt="image" width="750" height="90" /> 
+
+9. 	Now to integrate Maven to Jenkins go to Global tool configuration and fill the following details for JDK and Maven
+
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/6de599df-2d27-40ef-8939-45c6bd83bdec" alt="image" width="800" height="250" /> 
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/f8dc9c59-eaaf-4ddc-be31-805e484023a5" alt="image" width="800" height="250" /> 
+ 	
 
