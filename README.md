@@ -145,14 +145,17 @@ Login to your VM2
       ```bash
   	cd /opt
       ```
+      
 3.	```bash
         wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.76/bin/apache-tomcat-9.0.76.tar.gz
         ```
+   
 4.	Extract the tar.gz file
 	
 	```bash
         tar -xvzf apache-tomcat-9.0.76.tar.gz
          ```
+ 
 5.	Rename it to tomcat
 	
          ```bash
@@ -162,6 +165,7 @@ Login to your VM2
 6.    ```bash
       cd /tomcat/bin
       ```
+      
       and run ll command to see all files
 
    <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/0ac50821-d97a-48d3-8769-d88d494237a8" alt="image" width="450" height="500" /> 
@@ -181,6 +185,7 @@ Login to your VM2
 9.     ```bash
       find / -name context.xml
        ```
+   
  <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/224f10f1-b851-466f-a105-75b96d438dfc" alt="image" width="950" height="250" />
 
    above command gives 3 context.xml files. comment () Value ClassName field on files which are under webapp directory. After that restart tomcat services to effect these changes
@@ -202,8 +207,8 @@ Login to your VM2
 11.	create link files for tomcat startup.sh and shutdown.sh so that we start and stop the tomcat services from anywhere
 
     ```bash
-  ln -s /opt/apache-tomcat-8.5.35/bin/startup.sh /usr/local/bin/tomcatup
-  ln -s /opt/apache-tomcat-8.5.35/bin/shutdown.sh /usr/local/bin/tomcatdown
+     ln -s /opt/apache-tomcat-8.5.35/bin/startup.sh /usr/local/bin/tomcatup
+     ln -s /opt/apache-tomcat-8.5.35/bin/shutdown.sh /usr/local/bin/tomcatdown
     ```
     
 12.	Restart your services and now your tomcat App Manager UI will be opening 
