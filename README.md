@@ -146,20 +146,22 @@ Login to your VM2
   	cd /opt
       ```
       
-3.	```bash
-        wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.76/bin/apache-tomcat-9.0.76.tar.gz
-        ```
+3.	    
+     ```bash
+    wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.76/bin/apache-tomcat-9.0.76.tar.gz
+
+    ```
    
 4.	Extract the tar.gz file
 	
 	```bash
-        tar -xvzf apache-tomcat-9.0.76.tar.gz
-         ```
+    tar -xvzf apache-tomcat-9.0.76.tar.gz
+    ```
  
 5.	Rename it to tomcat
 	
-         ```bash
-         mv apache-tomcat-9.0.76 tomcat
+     ```bash
+    mv apache-tomcat-9.0.76 tomcat
 	 ```
   
 6.    ```bash
