@@ -65,7 +65,7 @@ Use the following command to open port 8080 and reload the firewall service:
 ```
 2. Now go to Jenkins UI and install Github plugin
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/a64b0ecd-c570-4a46-ba2a-f8c6f3362d0e" alt="image" width="360" height="400" /> 
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/a64b0ecd-c570-4a46-ba2a-f8c6f3362d0e" alt="image" width="450" height="200" /> 
 
 3. Go to Global Tool Configuration and setup like this:
 Note : Path to Git executable means where is my Git installed. Either we can give full path or just mentioning Git can automatically identify where is Git.
@@ -100,7 +100,7 @@ Note : Path to Git executable means where is my Git installed. Either we can giv
 
 6.	Now we need to set it up in the environment variable as right now it works only inside the maven bin folder but not outside.
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ade4cd45-bc3a-4be6-860e-f8c0e26b5c7d" alt="image" width="800" height="250" /> 
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ade4cd45-bc3a-4be6-860e-f8c0e26b5c7d" alt="image" width="950" height="250" /> 
 
  ```bash
 vi ~/.bash_profile
@@ -112,19 +112,19 @@ JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.19.0.7-1.el7_9.x86_64
 7.	For the values to change either we need to log out and login or we can use – source .bash_profile
 8.	Install Maven plugin in Jenkins UI
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/08e76475-477c-4ec0-8ce4-4c3916fed973" alt="image" width="750" height="90" /> 
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/08e76475-477c-4ec0-8ce4-4c3916fed973" alt="image" width="850" height="110" /> 
 
 9. 	Now to integrate Maven to Jenkins go to Global tool configuration and fill the following details for JDK and Maven
 
 <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/6de599df-2d27-40ef-8939-45c6bd83bdec" alt="image" width="375" height="350" /> 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/f8dc9c59-eaaf-4ddc-be31-805e484023a5" alt="image" width="375" height="350" /> 
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/f8dc9c59-eaaf-4ddc-be31-805e484023a5" alt="image" width="375" height="375" /> 
  	
 ####  Build a java project using Jenkins
 
 1.	Create a new job using maven project option 
 2.	Fill the Git repo details
    
-   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/35a1b89c-fcb1-4fd8-9232-728ec8ec0af2" alt="image" width="800" height="300" />
+   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/35a1b89c-fcb1-4fd8-9232-728ec8ec0af2" alt="image" width="825" height="300" />
   	
 3.	Fill the Maven details
    
@@ -158,12 +158,13 @@ Login to your VM2
          ```bash
          mv apache-tomcat-9.0.76 tomcat
 	 ```
+  
 6.    ```bash
       cd /tomcat/bin
       ```
       and run ll command to see all files
 
-   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/0ac50821-d97a-48d3-8769-d88d494237a8" alt="image" width="350" height="800" /> 
+   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/0ac50821-d97a-48d3-8769-d88d494237a8" alt="image" width="450" height="500" /> 
 
 7.	Startup.sh is the script we need to start our tomcat services
 
@@ -173,18 +174,18 @@ Login to your VM2
 
 8. 	Now if we try to access the Manager App it will give access denied
 
-    <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/51ac6265-c6ec-498e-856c-2b5ae9359e5a" alt="image" width="800" height="350" />
+    <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/51ac6265-c6ec-498e-856c-2b5ae9359e5a" alt="image" width="1000" height="350" />
 
     This is because by default we can access the tomcat UI from within the server its hosted but not from outside. In order to access it from outside we need to update the context.xml file.
 
 9.     ```bash
       find / -name context.xml
        ```
- <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/224f10f1-b851-466f-a105-75b96d438dfc" alt="image" width="800" height="350" />
+ <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/224f10f1-b851-466f-a105-75b96d438dfc" alt="image" width="950" height="250" />
 
    above command gives 3 context.xml files. comment () Value ClassName field on files which are under webapp directory. After that restart tomcat services to effect these changes
 
- <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/8ff6e8bb-c66a-4ad9-b308-580f09249a4e" alt="image" width="500" height="500" />
+ <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/8ff6e8bb-c66a-4ad9-b308-580f09249a4e" alt="image" width="500" height="300" />
 
 10.	Update users information in the tomcat-users.xml file goto tomcat home directory and Add below users to conf/tomcat-user.xml file
 
