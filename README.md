@@ -140,35 +140,72 @@ Target :
 Login to your VM2 
 
 1.	Install Java as did for Jenkins
-2.	Go to cd /opt
-3.	wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.76/bin/apache-tomcat-9.0.76.tar.gz
-4.	Extract the tar.gz file – tar -xvzf apache-tomcat-9.0.76.tar.gz
-5.	Rename it to tomcat  - mv apache-tomcat-9.0.76 tomcat
-6.	Cd /tomcat/bin and run ll command to see all files
- 
+2.	Go to
+
+      ```bash
+  	cd /opt
+      ```
+3.	```bash
+        wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.76/bin/apache-tomcat-9.0.76.tar.gz
+        ```
+4.	Extract the tar.gz file
+	
+	```bash
+        tar -xvzf apache-tomcat-9.0.76.tar.gz
+         ```
+5.	Rename it to tomcat
+	
+         ```bash
+         mv apache-tomcat-9.0.76 tomcat
+	 ```
+6.    ```bash
+      cd /tomcat/bin
+      ```
+      and run ll command to see all files
+
+   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/0ac50821-d97a-48d3-8769-d88d494237a8" alt="image" width="350" height="800" /> 
+
 7.	Startup.sh is the script we need to start our tomcat services
-Run - ./startup.sh
-8.	Now if we try to access the Manager App it will give access denied  
-This is because by default we can access the tomcat UI from within the server its hosted but not from outside. In order to access it from outside we need to update the context.xml file.
-9.	find / -name context.xml
- 
-above command gives 3 context.xml files. comment () Value ClassName field on files which are under webapp directory. After that restart tomcat services to effect these changes
- 
+
+     ```bash
+    ./startup.sh
+     ```
+
+8. 	Now if we try to access the Manager App it will give access denied
+
+    <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/51ac6265-c6ec-498e-856c-2b5ae9359e5a" alt="image" width="800" height="350" />
+
+    This is because by default we can access the tomcat UI from within the server its hosted but not from outside. In order to access it from outside we need to update the context.xml file.
+
+9.     ```bash
+      find / -name context.xml
+       ```
+ <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/224f10f1-b851-466f-a105-75b96d438dfc" alt="image" width="800" height="350" />
+
+   above command gives 3 context.xml files. comment () Value ClassName field on files which are under webapp directory. After that restart tomcat services to effect these changes
+
+ <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/8ff6e8bb-c66a-4ad9-b308-580f09249a4e" alt="image" width="500" height="500" />
 
 10.	Update users information in the tomcat-users.xml file goto tomcat home directory and Add below users to conf/tomcat-user.xml file
-	<role rolename="manager-gui"/>
+
+       ```bash
+        <role rolename="manager-gui"/>
 	<role rolename="manager-script"/>
 	<role rolename="manager-jmx"/>
 	<role rolename="manager-status"/>
 	<user username="admin" password="admin" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
 	<user username="deployer" password="deployer" roles="manager-script"/>
 	<user username="tomcat" password="s3cret" roles="manager-gui"/>
+        ```
+       
+11.	create link files for tomcat startup.sh and shutdown.sh so that we start and stop the tomcat services from anywhere
 
-11.	create link files for tomcat startup.sh and shutdown.sh so that we start and stop the tomcat services from anywhere 
+    ```bash
   ln -s /opt/apache-tomcat-8.5.35/bin/startup.sh /usr/local/bin/tomcatup
   ln -s /opt/apache-tomcat-8.5.35/bin/shutdown.sh /usr/local/bin/tomcatdown
-
+    ```
 12.	Restart your services and now your tomcat App Manager UI will be opening 
- 
 
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/3221e5e5-61c6-4cce-952e-467d41d85a43" alt="image" width="500" height="500" />
 
+   
