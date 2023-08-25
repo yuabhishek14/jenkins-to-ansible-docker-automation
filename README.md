@@ -134,4 +134,41 @@ Note : install means  : install the package into the local repository, for use a
 4.	Save and apply then build the pipeline .
 
 ## 2. Tomcat Integration with CI/CD
+Target :
+
+#### Install Tomcat on CentOS
+Login to your VM2 
+
+1.	Install Java as did for Jenkins
+2.	Go to cd /opt
+3.	wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.76/bin/apache-tomcat-9.0.76.tar.gz
+4.	Extract the tar.gz file – tar -xvzf apache-tomcat-9.0.76.tar.gz
+5.	Rename it to tomcat  - mv apache-tomcat-9.0.76 tomcat
+6.	Cd /tomcat/bin and run ll command to see all files
+ 
+7.	Startup.sh is the script we need to start our tomcat services
+Run - ./startup.sh
+8.	Now if we try to access the Manager App it will give access denied  
+This is because by default we can access the tomcat UI from within the server its hosted but not from outside. In order to access it from outside we need to update the context.xml file.
+9.	find / -name context.xml
+ 
+above command gives 3 context.xml files. comment () Value ClassName field on files which are under webapp directory. After that restart tomcat services to effect these changes
+ 
+
+10.	Update users information in the tomcat-users.xml file goto tomcat home directory and Add below users to conf/tomcat-user.xml file
+	<role rolename="manager-gui"/>
+	<role rolename="manager-script"/>
+	<role rolename="manager-jmx"/>
+	<role rolename="manager-status"/>
+	<user username="admin" password="admin" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
+	<user username="deployer" password="deployer" roles="manager-script"/>
+	<user username="tomcat" password="s3cret" roles="manager-gui"/>
+
+11.	create link files for tomcat startup.sh and shutdown.sh so that we start and stop the tomcat services from anywhere 
+  ln -s /opt/apache-tomcat-8.5.35/bin/startup.sh /usr/local/bin/tomcatup
+  ln -s /opt/apache-tomcat-8.5.35/bin/shutdown.sh /usr/local/bin/tomcatdown
+
+12.	Restart your services and now your tomcat App Manager UI will be opening 
+ 
+
 
