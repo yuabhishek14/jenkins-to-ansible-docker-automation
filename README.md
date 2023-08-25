@@ -184,9 +184,10 @@ Login to your VM2
 
     This is because by default we can access the tomcat UI from within the server its hosted but not from outside. In order to access it from outside we need to update the context.xml file.
 
-9.     ```bash
+9.    ```bash
       find / -name context.xml
-       ```
+
+      ```
    
  <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/224f10f1-b851-466f-a105-75b96d438dfc" alt="image" width="950" height="250" />
 
