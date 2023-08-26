@@ -65,7 +65,7 @@ Use the following command to open port 8080 and reload the firewall service:
 ```
 2. Now go to Jenkins UI and install Github plugin
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/a64b0ecd-c570-4a46-ba2a-f8c6f3362d0e" alt="image" width="450" height="200" /> 
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/a64b0ecd-c570-4a46-ba2a-f8c6f3362d0e" alt="image" width="400" height="300" /> 
 
 3. Go to Global Tool Configuration and setup like this:
 Note : Path to Git executable means where is my Git installed. Either we can give full path or just mentioning Git can automatically identify where is Git.
@@ -91,16 +91,16 @@ Note : Path to Git executable means where is my Git installed. Either we can giv
    Tar -xvzf apache-maven-3.8.3-bin.tar.gz
 ```
 
-  <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/87412594-a8d7-4005-92e4-fd0162051ac1" alt="image" width="850" height="60" /> 
+   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/87412594-a8d7-4005-92e4-fd0162051ac1" alt="image" width="850" height="60" /> 
 
 4.	Rename the file to make it simple – mv apache-maven-3.8.3 maven
 5.	If you go inside the maven bin folder you will see the actual command of Mavne i.e mvn
 	
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ed16098b-2aee-447b-9db0-420219c923b2" alt="image" width="800" height="250" /> 
+   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ed16098b-2aee-447b-9db0-420219c923b2" alt="image" width="600" height="150" /> 
 
 6.	Now we need to set it up in the environment variable as right now it works only inside the maven bin folder but not outside.
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ade4cd45-bc3a-4be6-860e-f8c0e26b5c7d" alt="image" width="950" height="250" /> 
+   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ade4cd45-bc3a-4be6-860e-f8c0e26b5c7d" alt="image" width="1000" height="220" /> 
 
  ```bash
 vi ~/.bash_profile
@@ -112,7 +112,7 @@ JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.19.0.7-1.el7_9.x86_64
 7.	For the values to change either we need to log out and login or we can use – source .bash_profile
 8.	Install Maven plugin in Jenkins UI
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/08e76475-477c-4ec0-8ce4-4c3916fed973" alt="image" width="850" height="110" /> 
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/08e76475-477c-4ec0-8ce4-4c3916fed973" alt="image" width="850" height="140" /> 
 
 9. 	Now to integrate Maven to Jenkins go to Global tool configuration and fill the following details for JDK and Maven
 
@@ -170,7 +170,7 @@ Login to your VM2
       
       and run ll command to see all files
 
-   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/0ac50821-d97a-48d3-8769-d88d494237a8" alt="image" width="450" height="500" /> 
+   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/0ac50821-d97a-48d3-8769-d88d494237a8" alt="image" width="200" height="350" /> 
 
 7.	Startup.sh is the script we need to start our tomcat services
 
@@ -189,7 +189,7 @@ Login to your VM2
 
       ```
    
- <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/224f10f1-b851-466f-a105-75b96d438dfc" alt="image" width="950" height="250" />
+ <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/224f10f1-b851-466f-a105-75b96d438dfc" alt="image" width="750" height="100" />
 
    above command gives 3 context.xml files. comment () Value ClassName field on files which are under webapp directory. After that restart tomcat services to effect these changes
 
@@ -216,20 +216,20 @@ Login to your VM2
     
 12.	Restart your services and now your tomcat App Manager UI will be opening 
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/3221e5e5-61c6-4cce-952e-467d41d85a43" alt="image" width="1100" height="600" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/3221e5e5-61c6-4cce-952e-467d41d85a43" alt="image" width="550" height="300" />
 
 ####            Tomcat and Jenkins UI Integration
 
 1.	Go to Jenkins UI -> Manage Jenkins -> Manage Plugins
 
-	<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/cee6eba0-5474-41bf-8815-1d475bfef516" alt="image" width="200" height="200" />
+	<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/cee6eba0-5474-41bf-8815-1d475bfef516" alt="image" width="500" height="100" />
 
         Install the above plugins
 
 2.	Now we need to configure tomcat server credentials 
 Go to manage Jenkins -> Manage Credentials -> Jenkins -> Global Credentials and click on Add credentials . Fill details as follows:
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/13243e1f-67b6-42db-ac0a-d85b307103b6" alt="image" width="200" height="350" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/13243e1f-67b6-42db-ac0a-d85b307103b6" alt="image" width="250" height="300" />
 
 Note: we are using “deployer” username because in case of one system  wants to access another system then we need to use managed script roles (<user username="deployer" password="deployer" roles="manager-script"/>
 )
@@ -241,7 +241,7 @@ Note: we are using “deployer” username because in case of one system  wants 
 
 5.	Fill the details as follows :
 
-	<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/eaaeca45-9332-4d69-9d6f-525ba029c708" alt="image" width="200" height="350" />
+	<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/eaaeca45-9332-4d69-9d6f-525ba029c708" alt="image" width="250" height="280" />
 
 Note :  
 •	WAR/EAR files fields requires the path where our war file is created. Either we can specify the full path or just **/*.war which is good practice
