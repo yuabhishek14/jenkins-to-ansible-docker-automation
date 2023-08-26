@@ -222,7 +222,7 @@ Login to your VM2
 
 1.	Go to Jenkins UI -> Manage Jenkins -> Manage Plugins
 
-	<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/cee6eba0-5474-41bf-8815-1d475bfef516" alt="image" width="500" height="100" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/cee6eba0-5474-41bf-8815-1d475bfef516" alt="image" width="500" height="350" />
 
         Install the above plugins
 
@@ -231,23 +231,27 @@ Go to manage Jenkins -> Manage Credentials -> Jenkins -> Global Credentials and 
 
 <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/13243e1f-67b6-42db-ac0a-d85b307103b6" alt="image" width="250" height="300" />
 
-Note: we are using “deployer” username because in case of one system  wants to access another system then we need to use managed script roles (<user username="deployer" password="deployer" roles="manager-script"/>
-)
+Note: we are using “deployer” username because in case of one system  wants to access another system then we need to use managed script roles 
+
+          ```bash
+         (<user username="deployer" password="deployer" roles="manager-script"/>)
+	 
+           ```
 
 3.	Now Integration is Done . Create a new Jenkins job , select the maven project.
 4.	Create the job as we created previously . In the end click on the ‘Add Post Build Action’ and select Deploy war/ear to a container.
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/4e58b4e2-a8a9-471f-bb13-5a6001a4f453" alt="image" width="200" height="350" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/4e58b4e2-a8a9-471f-bb13-5a6001a4f453" alt="image" width="300" height="350" />
 
 5.	Fill the details as follows :
 
-	<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/eaaeca45-9332-4d69-9d6f-525ba029c708" alt="image" width="250" height="280" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/eaaeca45-9332-4d69-9d6f-525ba029c708" alt="image" width="200" height="350" />
 
 Note :  
 •	WAR/EAR files fields requires the path where our war file is created. Either we can specify the full path or just **/*.war which is good practice
 •	In the container choose Tomcat 8
 
-        <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/a74901ee-d2fa-4bac-8a38-dad42fe0d25f" alt="image" width="200" height="350" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/a74901ee-d2fa-4bac-8a38-dad42fe0d25f" alt="image" width="200" height="350" />
 	
 •	In the credentials filed we need to specify the tomcat credentials which we configured earlier.
 •	The Tomcat URL fields required the public ip of the server where the tomcat is hosted and the port number.
