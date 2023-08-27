@@ -380,7 +380,7 @@ Passwd dockeradmin
 usermod -aG docker dockeradmin
 ```
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/941e17ff-633b-4e91-bbbe-ba1d282be497" alt="image" width="450" height="125" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/941e17ff-633b-4e91-bbbe-ba1d282be497" alt="image" width="470" height="110" />
 
 5.	If you try to login with this user you wont be able to as by default ec2 don’t allow password based authentication , we have to explicitly enable it.
 
@@ -397,7 +397,7 @@ service sshd reload
 
 8.   Now Go to Jenkins server and go to the plugins section and install “Publish Over SSH” plugin
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/61c4b5d9-ec0f-4c81-b942-664bcd9e64a1" alt="image" width="330" height="270" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/61c4b5d9-ec0f-4c81-b942-664bcd9e64a1" alt="image" width="330" height="250" />
 
 9.	After installing go to Configure System and click on “Add SSH Server” and add the necessary details
 
@@ -411,3 +411,52 @@ service sshd reload
 
 <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/b11b20a7-3ceb-4be1-bebe-f9772359295b" alt="image" width="300" height="200" />
 
+11.	Now in the Dockerhost server lets create a folder where we will copy our artifacts 
+
+```bash
+cd /opt
+```
+
+Here we will create a folder 
+
+```bash
+mkdir docker
+```
+Give permission to dockeradmin user  
+
+```bash
+chown -R dockeradmin:dockeradmin docker
+```
+
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/4ef6a612-0544-4d38-9efe-d272b482b94a" alt="image" width="500" height="100" />
+
+
+Also we have to copy the DockerFile to the docker folder and give permission 
+
+```bash
+chown -R dockeradmin:dockeradmin /opt/docker
+```
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/8418122e-aac5-487e-ba69-7dd3f1f137ec" alt="image" width="500" height="100" />
+
+Also we need to update our DockerFile to copy our artifact to the container /usr/local/tomcat/webapps folder.
+Add : 
+```bash
+copy ./*.war  /usr/local/tomcat/webapps
+```
+
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/a380f3c6-d26a-4f52-bac6-23687585c8e4" alt="image" width="500" height="100" />
+
+12. Now create a Jenkins job as we created previously and in the "Post Build Actions" select "Send build artifacts over SSH" and fill all the fields:
+
+   - **Name**: Select the dockerhost server
+   - **Sources files**: Place where the artifact is present
+   - **Remove prefix**: Part of the source path which you want to remove while copying to the target path.
+   - **Remote Directory**: Target path
+
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/25706346-4995-42be-be7a-64364fe82e79" alt="image" width="200" height="400" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/7c045de0-12f7-42c9-8c92-63e059c60a49" alt="image" width="200" height="400" />
+
+13. In the Exec command section add the docker commands to create a tomcat container to which we will deploy our artifacts
+
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/f9995a91-e9f0-40d4-9c02-56fa31f20edc" alt="image" width="500" height="100" />
+   
