@@ -282,7 +282,7 @@ Login to your VM3
 3.	Access the container at http://VM3_IP:8080
 ```
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/02c25b87-d9ef-4555-8af9-d0c6e29ad215" alt="image" width="350" height="200" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/02c25b87-d9ef-4555-8af9-d0c6e29ad215" alt="image" width="400" height="150" />
 
 4.	To check the issue lets go inside the container –
 
@@ -292,11 +292,11 @@ Docker exec -it tomcat-container /bin/bash and do ls
 
 ```
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ab377b8c-be1e-42eb-bfc2-978ce5f0da12" alt="image" width="400" height="150" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ab377b8c-be1e-42eb-bfc2-978ce5f0da12" alt="image" width="450" height="125" />
 
 5.	Here if we go inside webapps we will see that its empty and all the required contents are inside webapps.dist
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/d525c6c1-c202-4aca-913e-9bec41e4ae4b" alt="image" width="400" height="150" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/d525c6c1-c202-4aca-913e-9bec41e4ae4b" alt="image" width="450" height="125" />
 
 6.	Therefore we need to copy all the contents from webapps.dist to webapps
    
@@ -344,17 +344,13 @@ FROM tomcat:latest
 RUN cp -R  /usr/local/tomcat/webapps/dist/*  /usr/local/tomcat/webapps
 
 ```
-
-5.
  
 ```bash
-docker build -t demotomcat
+5. docker build -t demotomcat
 ```
 
-6.
-
 ```bash
-docker run -d –name demotomcat-container -p 8084:8080 demotomcat
+6. docker run -d –name demotomcat-container -p 8084:8080 demotomcat
 ```
 
 #### Integrate docker with Jenkins
@@ -384,7 +380,7 @@ Passwd dockeradmin
 usermod -aG docker dockeradmin
 ```
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/941e17ff-633b-4e91-bbbe-ba1d282be497" alt="image" width="400" height="150" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/941e17ff-633b-4e91-bbbe-ba1d282be497" alt="image" width="450" height="125" />
 
 5.	If you try to login with this user you wont be able to as by default ec2 don’t allow password based authentication , we have to explicitly enable it.
 
@@ -401,11 +397,11 @@ service sshd reload
 
 8.   Now Go to Jenkins server and go to the plugins section and install “Publish Over SSH” plugin
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/61c4b5d9-ec0f-4c81-b942-664bcd9e64a1" alt="image" width="300" height="300" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/61c4b5d9-ec0f-4c81-b942-664bcd9e64a1" alt="image" width="330" height="270" />
 
 9.	After installing go to Configure System and click on “Add SSH Server” and add the necessary details
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/0bf3e9dc-590e-4e28-a0b9-090965d83358" alt="image" width="150" height="300" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/0bf3e9dc-590e-4e28-a0b9-090965d83358" alt="image" width="150" height="270" />
 
     Note : Name – Give any name
             Hostname – IP address of docker server (public or private any)
@@ -413,5 +409,5 @@ service sshd reload
 
 10.	Next click on advanced and check the “Use password authentication, or use a different key” and specify your dockeradmin password then apply and save.
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/b11b20a7-3ceb-4be1-bebe-f9772359295b" alt="image" width="200" height="200" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/b11b20a7-3ceb-4be1-bebe-f9772359295b" alt="image" width="300" height="200" />
 
