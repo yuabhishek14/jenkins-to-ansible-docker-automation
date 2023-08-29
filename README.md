@@ -65,7 +65,7 @@ Use the following command to open port 8080 and reload the firewall service:
 ```
 2. Now go to Jenkins UI and install Github plugin
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/a64b0ecd-c570-4a46-ba2a-f8c6f3362d0e" alt="image" width="400" height="300" /> 
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/a64b0ecd-c570-4a46-ba2a-f8c6f3362d0e" alt="image" width="450" height="300" /> 
 
 3. Go to Global Tool Configuration and setup like this:
 Note : Path to Git executable means where is my Git installed. Either we can give full path or just mentioning Git can automatically identify where is Git.
@@ -89,18 +89,18 @@ Note : Path to Git executable means where is my Git installed. Either we can giv
   
   ```bash
    Tar -xvzf apache-maven-3.8.3-bin.tar.gz
-```
+  ```
 
    <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/87412594-a8d7-4005-92e4-fd0162051ac1" alt="image" width="850" height="60" /> 
 
 4.	Rename the file to make it simple – mv apache-maven-3.8.3 maven
 5.	If you go inside the maven bin folder you will see the actual command of Mavne i.e mvn
 	
-   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ed16098b-2aee-447b-9db0-420219c923b2" alt="image" width="600" height="150" /> 
+   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ed16098b-2aee-447b-9db0-420219c923b2" alt="image" width="620" height="170" /> 
 
 6.	Now we need to set it up in the environment variable as right now it works only inside the maven bin folder but not outside.
 
-   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ade4cd45-bc3a-4be6-860e-f8c0e26b5c7d" alt="image" width="1000" height="220" /> 
+   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ade4cd45-bc3a-4be6-860e-f8c0e26b5c7d" alt="image" width="1050" height="170" /> 
 
  ```bash
 vi ~/.bash_profile
