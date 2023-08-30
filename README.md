@@ -96,11 +96,11 @@ Note : Path to Git executable means where is my Git installed. Either we can giv
 4.	Rename the file to make it simple – mv apache-maven-3.8.3 maven
 5.	If you go inside the maven bin folder you will see the actual command of Mavne i.e mvn
 	
-   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ed16098b-2aee-447b-9db0-420219c923b2" alt="image" width="620" height="170" /> 
+   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ed16098b-2aee-447b-9db0-420219c923b2" alt="image" width="620" height="200" /> 
 
 6.	Now we need to set it up in the environment variable as right now it works only inside the maven bin folder but not outside.
 
-   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ade4cd45-bc3a-4be6-860e-f8c0e26b5c7d" alt="image" width="1050" height="170" /> 
+   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ade4cd45-bc3a-4be6-860e-f8c0e26b5c7d" alt="image" width="1100" height="170" /> 
 
  ```bash
 vi ~/.bash_profile
@@ -128,7 +128,7 @@ JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.19.0.7-1.el7_9.x86_64
   	
 3.	Fill the Maven details
    
-   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/302057b1-1281-4773-8c6c-2c623e83a5e0" alt="image" width="800" height="200" /> 
+   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/302057b1-1281-4773-8c6c-2c623e83a5e0" alt="image" width="800" height="180" /> 
    
 Note : install means  : install the package into the local repository, for use as a dependency in other projects locally.
 4.	Save and apply then build the pipeline .
@@ -170,7 +170,7 @@ Login to your VM2
       
       and run ll command to see all files
 
-   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/0ac50821-d97a-48d3-8769-d88d494237a8" alt="image" width="200" height="350" /> 
+   <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/0ac50821-d97a-48d3-8769-d88d494237a8" alt="image" width="200" height="300" /> 
 
 7.	Startup.sh is the script we need to start our tomcat services
 
@@ -180,16 +180,15 @@ Login to your VM2
 
 8. 	Now if we try to access the Manager App it will give access denied
 
-    <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/51ac6265-c6ec-498e-856c-2b5ae9359e5a" alt="image" width="1000" height="350" />
+    <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/51ac6265-c6ec-498e-856c-2b5ae9359e5a" alt="image" width="1050" height="320" />
 
     This is because by default we can access the tomcat UI from within the server its hosted but not from outside. In order to access it from outside we need to update the context.xml file.
 
 9.    ```bash
       find / -name context.xml
-
       ```
    
- <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/224f10f1-b851-466f-a105-75b96d438dfc" alt="image" width="750" height="100" />
+ <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/224f10f1-b851-466f-a105-75b96d438dfc" alt="image" width="750" height="130" />
 
    above command gives 3 context.xml files. comment () Value ClassName field on files which are under webapp directory. After that restart tomcat services to effect these changes
 
