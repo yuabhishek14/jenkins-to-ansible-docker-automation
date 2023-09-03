@@ -1,4 +1,4 @@
-# jenkins-to-ansible-docker-automation
+# End-to-End CI/CD Pipeline with GitHub, Jenkins, Maven, Ansible, and Docker 
 
 **Overview :**  
 
@@ -35,7 +35,7 @@ Before setting up the project, ensure you meet the following prerequisites:
 
 ## Documentation
 
-- [Jenkins Setup](https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/blob/main/Jenkins-Setup.md)
-- [Tomcat Integration](https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/blob/main/Tomcat-Integration.md)
-- [Docker Integration](https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/blob/main/Docker-Integration.md)
-- [Ansible Integration](https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/blob/main/Ansible-Integration.md)
+- [1. Jenkins Setup](https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/blob/main/Jenkins-Setup.md)
+- [2. Tomcat Integration](https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/blob/main/Tomcat-Integration.md)
+- [3. Docker Integration](https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/blob/main/Docker-Integration.md)
+- [4. Ansible Integration](https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/blob/main/Ansible-Integration.md)
