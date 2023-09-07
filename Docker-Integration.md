@@ -23,7 +23,7 @@ Login to your VM3
 3.	Access the container at http://VM3_IP:8080
 ```
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/02c25b87-d9ef-4555-8af9-d0c6e29ad215" alt="image" width="400" height="150" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/02c25b87-d9ef-4555-8af9-d0c6e29ad215" alt="image" width="500" height="150" />
 
 4.	To check the issue lets go inside the container –
 
@@ -33,11 +33,11 @@ Docker exec -it tomcat-container /bin/bash and do ls
 
 ```
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ab377b8c-be1e-42eb-bfc2-978ce5f0da12" alt="image" width="450" height="125" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ab377b8c-be1e-42eb-bfc2-978ce5f0da12" alt="image" width="550" height="120" />
 
 5.	Here if we go inside webapps we will see that its empty and all the required contents are inside webapps.dist
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/d525c6c1-c202-4aca-913e-9bec41e4ae4b" alt="image" width="450" height="125" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/d525c6c1-c202-4aca-913e-9bec41e4ae4b" alt="image" width="550" height="120" />
 
 6.	Therefore we need to copy all the contents from webapps.dist to webapps
    
@@ -121,7 +121,7 @@ Passwd dockeradmin
 usermod -aG docker dockeradmin
 ```
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/941e17ff-633b-4e91-bbbe-ba1d282be497" alt="image" width="470" height="110" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/941e17ff-633b-4e91-bbbe-ba1d282be497" alt="image" width="500" height="100" />
 
 5.	If you try to login with this user you wont be able to as by default ec2 don’t allow password based authentication , we have to explicitly enable it.
 
@@ -169,7 +169,7 @@ Give permission to dockeradmin user
 chown -R dockeradmin:dockeradmin docker
 ```
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/4ef6a612-0544-4d38-9efe-d272b482b94a" alt="image" width="500" height="100" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/4ef6a612-0544-4d38-9efe-d272b482b94a" alt="image" width="510" height="90" />
 
 
 Also we have to copy the DockerFile to the docker folder and give permission 
@@ -177,7 +177,7 @@ Also we have to copy the DockerFile to the docker folder and give permission
 ```bash
 chown -R dockeradmin:dockeradmin /opt/docker
 ```
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/8418122e-aac5-487e-ba69-7dd3f1f137ec" alt="image" width="500" height="100" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/8418122e-aac5-487e-ba69-7dd3f1f137ec" alt="image" width="510" height="90" />
 
 Also we need to update our DockerFile to copy our artifact to the container /usr/local/tomcat/webapps folder.
 Add : 
@@ -185,7 +185,7 @@ Add :
 copy ./*.war  /usr/local/tomcat/webapps
 ```
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/a380f3c6-d26a-4f52-bac6-23687585c8e4" alt="image" width="500" height="100" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/a380f3c6-d26a-4f52-bac6-23687585c8e4" alt="image" width="520" height="90" />
 
 12. Now create a Jenkins job as we created previously and in the "Post Build Actions" select "Send build artifacts over SSH" and fill all the fields:
 
@@ -194,9 +194,9 @@ copy ./*.war  /usr/local/tomcat/webapps
    - **Remove prefix**: Part of the source path which you want to remove while copying to the target path.
    - **Remote Directory**: Target path
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/25706346-4995-42be-be7a-64364fe82e79" alt="image" width="200" height="400" />
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/7c045de0-12f7-42c9-8c92-63e059c60a49" alt="image" width="200" height="400" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/25706346-4995-42be-be7a-64364fe82e79" alt="image" width="300" height="400" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/7c045de0-12f7-42c9-8c92-63e059c60a49" alt="image" width="210" height="400" />
 
 13. In the Exec command section add the docker commands to create a tomcat container to which we will deploy our artifacts
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/f9995a91-e9f0-40d4-9c02-56fa31f20edc" alt="image" width="500" height="100" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/f9995a91-e9f0-40d4-9c02-56fa31f20edc" alt="image" width="500" height="140" />
