@@ -6,7 +6,7 @@ On the VM4 execute these steps :
 
 1. 
 ```bash
-	sudo yum install -y yum-utils
+sudo yum install -y yum-utils
 ```
 
 2. Add new user
@@ -31,7 +31,7 @@ vi /etc/ssh/ssh_config
 ```
 in this file uncomment the PasswordAuthentication yes and comment the PasswordAuthentication No
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/b808521e-7f44-4854-9e97-58f91ec92f38" alt="image" width="500" height="150" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/b808521e-7f44-4854-9e97-58f91ec92f38" alt="image" width="540" height="120" />
 
 Then reload the ssh service
 
@@ -105,14 +105,14 @@ Go to Jenkins UI >> Manage Jenkins >>  Configuration System
 
 1.	In the “Publish over SSH” section  add the ansible host details
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/6c6a70f4-6d30-4697-9418-1de6b372e508" alt="image" width="200" height="400" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/6c6a70f4-6d30-4697-9418-1de6b372e508" alt="image" width="200" height="390" />
 
 In the advanced section add the ansadmin password . Click on the test configuration to test connectivity .
 
 2.	Create a Jenkins job named “Copy_Artifacts_onto_Ansible”by using previously created docker job .
 Remove the entire “Exec Command” section 
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/034f932d-82c6-4efd-98da-72ed3d2c9e16" alt="image" width="200" height="400" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/034f932d-82c6-4efd-98da-72ed3d2c9e16" alt="image" width="300" height="360" />
 
 We will create a ansible playbook to perform the same activity.
 
@@ -230,7 +230,7 @@ ansible-playbook regapp.yml --check
 
 1.	Open the jenkins job “Copy_Artifacts_onto_Ansible” and in the “Exec Command” section add the command to execute the ansible playbook to create a docker image and push it to docker hub
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/70f9f1db-e2ca-4bf9-bee0-42cfaee0548c" alt="image" width="200" height="400" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/70f9f1db-e2ca-4bf9-bee0-42cfaee0548c" alt="image" width="300" height="370" />
 
 2.	Now we need to create another ansible playbook to get the docker image from the docker hub and create a container on dockerhost machine
 Login to your ansible machine and go to the /opt/docker folder
@@ -263,4 +263,4 @@ vi deploy_regapp.yml
 3.	Give permission to Sudo chmod 777 /var/run/docker.sock on dockerhost
 4.	Now in the job add the command to execute the deploy_regapp.yml
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/d8246d12-abca-4101-aedf-70da5fa5f82c" alt="image" width="200" height="400" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/d8246d12-abca-4101-aedf-70da5fa5f82c" alt="image" width="300" height="370" />
