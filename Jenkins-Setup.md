@@ -100,5 +100,6 @@ JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.19.0.7-1.el7_9.x86_64
    
    <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/302057b1-1281-4773-8c6c-2c623e83a5e0" alt="image" width="800" height="180" /> 
    
-Note : install means  : install the package into the local repository, for use as a dependency in other projects locally.
+Note : "install" means install the package into the local repository, for use as a dependency in other projects locally.
+
 4.	Save and apply then build the pipeline .
