@@ -61,7 +61,7 @@ Login to your VM2
 
 10.	Update users information in the tomcat-users.xml file goto tomcat home directory and Add below users to conf/tomcat-user.xml file
 
-       ```bash
+    ```bash
         <role rolename="manager-gui"/>
 	<role rolename="manager-script"/>
 	<role rolename="manager-jmx"/>
@@ -69,7 +69,7 @@ Login to your VM2
 	<user username="admin" password="admin" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
 	<user username="deployer" password="deployer" roles="manager-script"/>
 	<user username="tomcat" password="s3cret" roles="manager-gui"/>
-        ```
+    ```
        
 11.	create link files for tomcat startup.sh and shutdown.sh so that we start and stop the tomcat services from anywhere
 
