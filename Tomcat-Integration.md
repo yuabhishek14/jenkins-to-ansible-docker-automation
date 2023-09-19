@@ -70,8 +70,7 @@ above command gives 3 context.xml files. comment () Value ClassName field on fil
     <user username="admin" password="admin" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
     <user username="deployer" password="deployer" roles="manager-script"/>
     <user username="tomcat" password="s3cret" roles="manager-gui"/>
-     ```
-
+    
     ````
 
 11. create link files for tomcat startup.sh and shutdown.sh so that we start and stop the tomcat services from anywhere
@@ -101,6 +100,7 @@ Install the above plugins
 Note: we are using “deployer” username because in case of one system wants to access another system then we need to use managed script roles
 
     ```bash
+    
          (<user username="deployer" password="deployer" roles="manager-script"/>)
 
      ```
