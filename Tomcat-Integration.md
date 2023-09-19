@@ -61,15 +61,15 @@ Login to your VM2
 
 10.	Update users information in the tomcat-users.xml file goto tomcat home directory and Add below users to conf/tomcat-user.xml file
 
-    ```bash
-        <role rolename="manager-gui"/>
+       ```bash
+    <role rolename="manager-gui"/>
 	<role rolename="manager-script"/>
 	<role rolename="manager-jmx"/>
 	<role rolename="manager-status"/>
 	<user username="admin" password="admin" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
 	<user username="deployer" password="deployer" roles="manager-script"/>
 	<user username="tomcat" password="s3cret" roles="manager-gui"/>
-    ```
+        ```
        
 11.	create link files for tomcat startup.sh and shutdown.sh so that we start and stop the tomcat services from anywhere
 
@@ -86,9 +86,9 @@ Login to your VM2
 
 1.	Go to Jenkins UI -> Manage Jenkins -> Manage Plugins
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/cee6eba0-5474-41bf-8815-1d475bfef516" alt="image" width="500" height="350" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/cee6eba0-5474-41bf-8815-1d475bfef516" alt="image" width="800" height="300" />
 
-        Install the above plugins
+Install the above plugins
 
 2.	Now we need to configure tomcat server credentials 
 Go to manage Jenkins -> Manage Credentials -> Jenkins -> Global Credentials and click on Add credentials . Fill details as follows:
@@ -97,10 +97,10 @@ Go to manage Jenkins -> Manage Credentials -> Jenkins -> Global Credentials and 
 
 Note: we are using “deployer” username because in case of one system  wants to access another system then we need to use managed script roles 
 
-          ```bash
+    ```bash
          (<user username="deployer" password="deployer" roles="manager-script"/>)
 	 
-           ```
+     ```
 
 3.	Now Integration is Done . Create a new Jenkins job , select the maven project.
 4.	Create the job as we created previously . In the end click on the ‘Add Post Build Action’ and select Deploy war/ear to a container.
