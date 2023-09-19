@@ -19,7 +19,7 @@ passwd ansadmin
 3. Add this user to sudos file
    
 ```bash
-Visudo 
+visudo 
 Then go to the end of file by shift+G and add :
 Ansadmin ALL=(ALL)  NOPASSWD : ALL and save the file
 ```
@@ -42,17 +42,14 @@ service sshd reload
 5.	Now we need to create keys for ansadmin user
 
 ```bash
-Sudo su – ansadmin
+sudo su – ansadmin
+ssh-keygen
 ```
-6.	Create ssh key – ssh-keygen
 
-```bash
-Sudo su – ansadmin
-```
-7.	Now we have found our private key at  **/home/ansadmin/.ssh/id_rsa** and public key at **/home/ansadmin/.ssh/id_rsa.pub**
+6.	Now we have found our private key at  **/home/ansadmin/.ssh/id_rsa** and public key at **/home/ansadmin/.ssh/id_rsa.pub**
 
 
-8.	Install Ansible 
+7.	Install Ansible 
 
 ```bash
 sudo su –
@@ -62,6 +59,7 @@ sudo yum install ansible
 
 #### Ansible – Docker Integration
 Go to Docker host (VM3) and execute these commands :
+
 1.	
 ```bash
 sudo su –
@@ -147,7 +145,7 @@ service docker start
 vi Dockerfile
 
 FROM tomcat:latest
-RUN cp -R  /usr/local/tomcat/webapps/dist/*  /usr/local/tomcat/webapps
+RUN cp -R  /usr/local/tomcat/webapps.dist/*  /usr/local/tomcat/webapps
 COPY ./*.war  /usr/local/tomcat/webapps
 ```
 5.	Try to manually create a docker image and run container
@@ -228,7 +226,7 @@ ansible-playbook regapp.yml --check
 ```
 #### Final Jenkins Job
 
-1.	Open the jenkins job “Copy_Artifacts_onto_Ansible” and in the “Exec Command” section add the command to execute the ansible playbook to create a docker image and push it to docker hub
+1.	Open the jenkins job **“Copy_Artifacts_onto_Ansible”** and in the **“Exec Command”** section add the command to execute the ansible playbook to create a docker image and push it to docker hub
 
 <img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/70f9f1db-e2ca-4bf9-bee0-42cfaee0548c" alt="image" width="300" height="370" />
 
@@ -252,11 +250,11 @@ vi deploy_regapp.yml
     ignore_errors: yes
 
   - name: remove image
-    command: docker rmi valaxy/regapp:latest
+    command: docker rmi abhishekdevops14/regapp:latest
     ignore_errors: yes
 
   - name: create container
-    command: docker run -d –name regapp-server -p 8082:8080 valaxy/regapp:latest
+    command: docker run -d –name regapp-server -p 8082:8080 abhishekdevops14/regapp:latest
 
 ```
 
