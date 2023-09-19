@@ -121,14 +121,14 @@ Passwd dockeradmin
 usermod -aG docker dockeradmin
 ```
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/941e17ff-633b-4e91-bbbe-ba1d282be497" alt="image" width="510" height="90" />
-
-5.	If you try to login with this user you wont be able to as by default ec2 don’t allow password based authentication , we have to explicitly enable it.
+5.	If you try to login with this user you wont be able to as by default EC2 don’t allow password based authentication , we have to explicitly enable it.
 
 ```bash
 vi /etc/ssh/sshd_config and search for /Password
 ```
 uncomment the PasswordAuthentication Yes and comment the PasswordAuthentication no
+
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/941e17ff-633b-4e91-bbbe-ba1d282be497" alt="image" width="510" height="90" />
 
 7.	Save the file and reload the services
 
