@@ -19,11 +19,11 @@ Login to your VM3
 
 ```bash
 1.	docker pull tomcat
-2.	docker run -d -p 8080  - - tomcat-container tomcat
+2.	docker run -d -p 8081:8080  --name tomcat-container tomcat
 3.	Access the container at http://VM3_IP:8080
 ```
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/02c25b87-d9ef-4555-8af9-d0c6e29ad215" alt="image" width="540" height="150" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/02c25b87-d9ef-4555-8af9-d0c6e29ad215" alt="image" width="580" height="150" />
 
 4.	To check the issue lets go inside the container –
 
@@ -33,11 +33,11 @@ Docker exec -it tomcat-container /bin/bash and do ls
 
 ```
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ab377b8c-be1e-42eb-bfc2-978ce5f0da12" alt="image" width="580" height="90" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/ab377b8c-be1e-42eb-bfc2-978ce5f0da12" alt="image" width="610" height="90" />
 
 5.	Here if we go inside webapps we will see that its empty and all the required contents are inside webapps.dist
 
-<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/d525c6c1-c202-4aca-913e-9bec41e4ae4b" alt="image" width="570" height="90" />
+<img src="https://github.com/yuabhishek14/jenkins-to-ansible-docker-automation/assets/43784560/d525c6c1-c202-4aca-913e-9bec41e4ae4b" alt="image" width="600" height="90" />
 
 6.	Therefore we need to copy all the contents from webapps.dist to webapps
    
@@ -82,7 +82,7 @@ docker run -d --name mytomcat-server -p 8083:8080 mytomcat
 
 ```bash
 FROM tomcat:latest
-RUN cp -R  /usr/local/tomcat/webapps/dist/*  /usr/local/tomcat/webapps
+RUN cp -R  /usr/local/tomcat/webapps.dist/*  /usr/local/tomcat/webapps
 
 ```
  
